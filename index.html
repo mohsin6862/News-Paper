@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-zinc-100">
     <header>
         <div class="navbar bg-base-100 w-3/4 mx-auto shadow-xl">
             <div class="flex-1">
@@ -46,6 +46,31 @@
           </div>
         
     </header>
+
+    <main>
+        <section>
+            <div tabindex="0" class="collapse border border-base-300 bg-base-100 rounded-box mt-5 w-3/4 mx-auto"> 
+                <div class="collapse-title text-xl font-medium">
+                    <span id="items-found">0</span> items found for category <span id="catagory-found"></span>
+                </div>
+                <div class="collapse-content"> 
+                  <p>tabindex="0" attribute is necessary to make the div focusable</p>
+                </div>
+              </div>
+        </section>
+
+        <section id="news-container"  class="mt-8 w-3/4 mx-auto">
+            <!-- <div class="card lg:card-side bg-base-100 shadow-xl p-5">
+                <figure><img  src="https://source.unsplash.com/random/200x200?sig=3" alt="Album"/></figure>
+                <div class="card-body">
+                  <h2 class="card-title">New album is released!</h2>
+                  <p>Click the button to listen on Spotiwhy app.</p>
+                  
+                  
+                </div>
+              </div> -->
+        </section>
+    </main>
 
 
 
