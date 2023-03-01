@@ -67,9 +67,9 @@ const showAllNews = (data, category_name) => {
         const { _id, image_url, title, details, author, total_view, rating } = singleNews;
         // newsContainer.innerHTML += ``
         const card = document.createElement("div");
-        card.classList.add("card", "mb-3");
+        
         card.innerHTML = `
-        <div class="card lg:card-side bg-base-100 shadow-xl p-5">
+        <div class="card lg:card-side bg-base-100 shadow-xl mb-8 p-5">
     <figure><img  src="${image_url}" alt="Album" /></figure>
     <div class="card-body">
 
@@ -77,7 +77,36 @@ const showAllNews = (data, category_name) => {
         <h2 class="card-title">${title}</h2>
         <p>${details.slice(0, 200)}...</p>
 
+        <div class="footer  flex justify-between items-center mt-5">
+                        <div class="flex">
+                            <img class="rounded-full w-12 h-12" src="${author.img}"
+                                alt="">
+                            <div>
+                                <p>${author.name}</p>
+                                <p>${author.published_date}</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <p><i class="fa-solid fa-eye"></i></p>
+                            <p>${total_view}</p>
+
+                        </div>
+
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <p>${rating.number}</p>
+                        </div>
+                        <div >
+                            <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+
     </div>
+
 </div>
         `;
 
