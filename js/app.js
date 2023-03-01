@@ -67,7 +67,7 @@ const showAllNews = (data, category_name) => {
         const { _id, image_url, title, details, author, total_view, rating } = singleNews;
         // newsContainer.innerHTML += ``
         const card = document.createElement("div");
-        
+       
         card.innerHTML = `
         <div class="card lg:card-side bg-base-100 shadow-xl mb-8 p-5">
     <figure><img  src="${image_url}" alt="Album" /></figure>
@@ -101,7 +101,9 @@ const showAllNews = (data, category_name) => {
                             <p>${rating.number}</p>
                         </div>
                         <div >
-                            <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                            
+
+                            <label for="my-modal-5" class="btn"><i onclick="getArrowBtn('${_id}')" class="fa-sharp fa-solid fa-arrow-right" ></i></label>
                         </div>
                     </div>
 
@@ -114,6 +116,25 @@ const showAllNews = (data, category_name) => {
     });
 }
 
+const getArrowBtn = (news_id) =>{
+    const url = ` https://openapi.programming-hero.com/api/news/${news_id}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => showDetailsNews(data.data[0]))
+
+   
+}
+
+const showDetailsNews = (newsDetails)=>{
+
+    document.getElementById('details-title').innerHTML = newsDetails.title;
+    document.getElementById('details-body').innerHTML = newsDetails.details;
+    document.getElementById('image-url').innerHTML = `<img src="${newsDetails.image_url}" alt="">`;
+
+
+
+
+}
 
 
 
